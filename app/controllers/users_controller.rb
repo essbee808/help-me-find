@@ -6,7 +6,17 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         binding.pry
+        if @user && @user.authenticate(password: params[:password])
+            
+        else
+
+        end
     end
+
+    def show
+    end
+
+    private
 
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :password_digest)
