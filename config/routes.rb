@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get '/signup', to: 'users#new', :as => :new_user_path
   post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
