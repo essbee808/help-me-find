@@ -3,5 +3,6 @@ class CategoriesController < ApplicationController
     end
 
     def index
+        @categories = ["Budgeting", "Housing", "Transportation"]
     end
 end
