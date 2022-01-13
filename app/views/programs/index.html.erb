@@ -1,0 +1,11 @@
+<% if @programs.empty? %>
+    <h2>There are no programs at the moment.</h2>
+<% else %>
+    <% @programs.each do |i| %>
+        Name: <%= i.name %>
+        Cost: <%= i.cost %>
+        Organizer: <%= i.organizer_id %>
+
+    <% end %>
+<% end %>
+
