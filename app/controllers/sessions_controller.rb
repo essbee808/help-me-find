@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    binding.pry
+    #binding.pry
   end
 
   def create
-    binding.pry
+    #binding.pry
     user = User.find_by(email: params[:session][:email])
     
     if user && user.authenticate(params[:session][:password])

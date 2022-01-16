@@ -2,10 +2,9 @@
     <h2>There are no programs at the moment.</h2>
 <% else %>
     <% @programs.each do |i| %>
-        Name: <%= i.name %>
-        Cost: <%= i.cost %>
+        Name: <%= i.name %><br>
         Organizer: <%= i.organizer_id %>
-
+        <br>
     <% end %>
 <% end %>
 
