@@ -1,0 +1,11 @@
+<% if logged_in? %>
+    <%= @current_user.first_name %>
+    <br>
+    <%= link_to 'Log out', logout_path %>
+<% else %>
+    <%= render 'form' %>
+    <br>
+    <p>Don't have an account? </p> 
+    <%= link_to 'Sign up with email', new_user_path %>
+    <p>Sign up with Google</p>
+<% end %>

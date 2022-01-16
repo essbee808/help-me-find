@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    binding.pry
     # render login form
   end
 
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
     
     if user && user.authenticate(params[:session][:password])
       log_in(user)
-      redirect_to user
+      redirect_to user 
     else
       render :new
     end
