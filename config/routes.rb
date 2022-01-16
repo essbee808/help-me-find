@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'sessions#welcome'
+  root to: 'sessions#new'
 
   get '/signup', to: 'users#new', :as => :new_user
   post '/signup', to: 'users#create'
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  resources :users, only: [:edit, :update]
+  resources :users
   resources :programs
   resources :organizations
   resources :categories, only: [:show, :index]

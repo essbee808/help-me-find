@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    #binding.pry
+    # render login form
   end
 
   def create
