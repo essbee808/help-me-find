@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+  
+  def welcome
+  end
+  
   def new
     binding.pry
     # render login form
