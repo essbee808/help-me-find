@@ -13,7 +13,6 @@ class ProgramsController < ApplicationController
         else 
             render :new
         end
-        @program = Program.new(program_params)
     end
 
     def index
