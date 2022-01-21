@@ -1,8 +1,8 @@
 class ProgramsController < ApplicationController
-    before_action
 
     def new
         @program = Program.new
+        @organizations = Organization.all
     end
 
     def create

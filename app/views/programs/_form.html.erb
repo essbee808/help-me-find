@@ -8,6 +8,7 @@
     <%= f.label :name %>
     <%= f.text_field :name %><br>
     <br>
+    <%= collection_select(:organization, :id, Organization.all, :id, :name, :include_blank => "Select an organization") %><br>
    
     <%= f.label :description%>
     <%= f.text_area :description %><br>
