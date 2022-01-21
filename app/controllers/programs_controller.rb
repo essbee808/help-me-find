@@ -9,7 +9,7 @@ class ProgramsController < ApplicationController
         #binding.pry
         @program = Program.new(program_params)
         if @program.save
-            redirect_to @program
+            redirect_to program_path(@program)
         else 
             render :new
         end
