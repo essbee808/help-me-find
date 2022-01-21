@@ -4,7 +4,7 @@ class OrganizationsController < ApplicationController
     end
 
     def create
-        binding.pry
+        #binding.pry
         @organization = Organization.new(organization_params)
         if @organization.save
             redirect_to @organization
@@ -20,6 +20,6 @@ class OrganizationsController < ApplicationController
     private
 
     def organization_params
-        params.require(:organization).permit(:name, :website, :phone, :email, :program_ids = [])
+        params.require(:organization).permit(:name, :website, :phone, :email, :program_ids => [])
     end
 end

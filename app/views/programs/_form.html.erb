@@ -8,20 +8,27 @@
     <%= f.label :name %>
     <%= f.text_field :name %><br>
     <br>
-    <%= collection_select(:organization, :id, Organization.all, :id, :name, :include_blank => "Select an organization") %><br>
-   
+
+    <%= f.collection_select(:organization_id, Organization.all, :id, :name, :include_blank => "Select an organization") %>
+    <p>or add a new organization: <%= f.text_field :organization %></p><br>
+    <br>
+
     <%= f.label :description%>
     <%= f.text_area :description %><br>
     <br>
+
     <%= f.label :eligibility %>
     <%= f.text_area :eligibility %><br>
     <br>
+
     <%= f.label :cost %>
     <%= f.text_field :cost %><br>
     <br> 
+
     <%= f.label :languages %>
     <%= f.text_field :languages %><br>
     <br>
+
     <%= f.label :coverage_area %>
     <%= f.text_area :coverage_area %><br>
     <br>
