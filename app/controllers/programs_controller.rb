@@ -2,7 +2,7 @@ class ProgramsController < ApplicationController
 
     def new
         @program = Program.new
-        @organizations = Organization.all
+        @organizations =
     end
 
     def create
@@ -23,7 +23,7 @@ class ProgramsController < ApplicationController
 
     def program_params
         params.require(:program).permit(
-            :name, :coverage_area, :languages, :cost, :description, :eligibility
+            :name, :coverage_area, :description, :website
             )
     end
 end
