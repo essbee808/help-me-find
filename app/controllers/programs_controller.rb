@@ -2,12 +2,12 @@ class ProgramsController < ApplicationController
 
     def new
         @program = Program.new
-        @organizations =
     end
 
     def create
-        #binding.pry
+        
         @program = Program.new(program_params)
+        binding.pry
         if @program.save
             redirect_to program_path(@program)
         else 
