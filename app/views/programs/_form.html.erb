@@ -8,9 +8,10 @@
     <%= f.label :name %>
     <%= f.text_field :name %><br>
     <br>
-
+    <%= f.collection_select(:category_id, Category.all, :id, :name, :include_blank => "Select a category") %><br>
+    <br>
     <%= f.collection_select(:organization_id, Organization.all, :id, :name, :include_blank => "Select an organization") %>
-    <p>or add a new organization: <%= f.text_field :organization %></p><br>
+   
     <br>
 
     <%= f.label :description%>

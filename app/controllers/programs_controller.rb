@@ -7,6 +7,8 @@ class ProgramsController < ApplicationController
     def create
         
         @program = Program.new(program_params)
+        @organization = Organization.find_by(id: params[:program][:organization_id])
+        @program.organization_id = @organization.id 
         binding.pry
         if @program.save
             redirect_to program_path(@program)
@@ -23,7 +25,7 @@ class ProgramsController < ApplicationController
 
     def program_params
         params.require(:program).permit(
-            :name, :coverage_area, :description, :website
+            :name, :coverage_area, :description, :website, :organization_id, :category_id
             )
     end
 end
