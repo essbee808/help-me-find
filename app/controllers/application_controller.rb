@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
  
  private
 
- def logged_in_user
+ def require_login
     unless logged_in?
-        flash[:danger] = "Please log in."
+        flash[:error] = "Please log in."
         redirect_to login_url
     end
  end
