@@ -1,14 +1,11 @@
 class ApplicationController < ActionController::Base
- include SessionsHelper
+ include ApplicationHelper
  protect_from_forgery with: :exception
  #before_action :verified_user 
 
- private
-
- def verified_user
-    unless logged_in?
-        flash[:error] = "Please log in."
-        redirect_to '/'
+ def welcome
+    if !logged_in?
+        redirect_to login_path
     end
  end
 end

@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :verified_user, except: [:new, :create]
-
-  def welcome
-  end
   
   def new
     # render login form
