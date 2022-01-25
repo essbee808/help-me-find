@@ -1,11 +1,10 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, except: [:new, :create]
+  before_action :verified_user, except: [:new, :create]
 
   def welcome
   end
   
   def new
-    #binding.pry
     # render login form
   end
 
@@ -23,7 +22,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to '/'
+    redirect_to root_path
   end
 
 end
